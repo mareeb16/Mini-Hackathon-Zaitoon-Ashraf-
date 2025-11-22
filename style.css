@@ -1,0 +1,126 @@
+:root {
+  --bg: #1e1e2f;
+  --card: rgba(255, 255, 255, 0.12);
+  --muted: #c0c0d0;
+  --accent: #6c63ff;
+  --danger: #ff5c5c;
+}
+
+* { box-sizing: border-box; }
+body {
+  font-family: Inter, system-ui;
+  margin: 0;
+  background: var(--bg);
+  color: #f0f0f5;
+}
+
+.wrap { 
+  max-width: 900px; 
+  margin: 28px auto; 
+  padding: 16px;
+}
+
+/* HEADER */
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.brand { display:flex; gap:12px; align-items:center; }
+.logo {
+  width:44px;height:44px;
+  border-radius:10px;
+  background: linear-gradient(135deg, var(--accent), #a78bfa);
+  color:white;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+
+.user-box { display:flex; gap:10px; align-items:center; }
+.user-name { font-weight:600; color:var(--muted); }
+
+/* BUTTONS */
+.btn {
+  background:var(--accent);
+  color:white;
+  padding:8px 12px;
+  border-radius:8px;
+  border:0;
+  cursor:pointer;
+}
+.btn.ghost {
+  background:transparent;
+  color:var(--accent);
+  border:1px solid rgba(108,99,255,.2);
+}
+
+/* CARDS */
+.card {
+  background:var(--card);
+  padding:14px;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(16,42,67,0.15);
+  margin-bottom:14px;
+}
+
+/* AUTH FORMS */
+.auth-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+label {
+  display:block;
+  font-size:13px;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+
+input, textarea, select {
+  width:100%;
+  padding:10px;
+  border-radius:8px;
+  background: rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.25);
+  color: #f0f0f5;
+}
+
+textarea { min-height:80px; resize:vertical; }
+
+/* POST UI */
+.avatar {
+  width:44px;height:44px;
+  border-radius:50%;
+  background: linear-gradient(135deg,#6c63ff,#9f80ff);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;color:#fff;
+}
+
+.controls { display:flex; gap:8px; flex-wrap:wrap; }
+
+.post { border-radius:10px; padding:12px; }
+.post .meta {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:8px;
+}
+
+.post .text { white-space:pre-wrap; }
+.post img { max-width:100%; border-radius:8px; margin-top:8px; }
+
+.actions { display:flex; gap:10px; margin-top:10px; }
+
+.like { cursor:pointer; }
+.like.liked { color:var(--accent); }
+
+.muted { font-size:13px; color:var(--muted); }
+
+.footer { margin-top:18px; text-align:center; color:var(--muted); }
+
+/* MOBILE */
+@media (max-width:700px) {
+  .auth-grid { grid-template-columns:1fr; }
+}

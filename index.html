@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Social Media App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">SM</div>
+        <div>
+          <h1>Social Media App</h1>
+          <div class="muted">"A sleek, modern mini social media app to post, like, and connect with ease."</div>
+        </div>
+      </div>
+      <div class="user-box">
+        <div id="welcome" class="user-name">Not signed in</div>
+        <button id="btn-logout" class="btn ghost" style="display:none">Logout</button>
+      </div>
+    </header>
+
+    <!-- AUTH AREA -->
+    <div id="auth-area" class="card">
+      <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px">
+        <strong>Login / Signup</strong>
+       
+      </div>
+
+      <div class="auth-grid">
+        <div>
+          <form id="login-form">
+            <label>Email</label>
+            <input id="login-email" type="email" required>
+
+            <label>Password</label>
+            <input id="login-pass" type="password" required>
+
+            <div style="margin-top:10px;display:flex;gap:8px">
+              <button class="btn">Login</button>
+              <button id="show-signup" type="button" class="btn ghost">Show Signup</button>
+            </div>
+          </form>
+        </div>
+
+        <div id="signup-side">
+          <form id="signup-form">
+            <label>Name</label>
+            <input id="signup-name" type="text" required>
+
+            <label>Email</label>
+            <input id="signup-email" type="email" required>
+
+            <label>Password</label>
+            <input id="signup-pass" type="password" required>
+
+            <div style="margin-top:10px">
+              <button class="btn">Signup</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- APP AREA -->
+    <div id="app" style="display:none">
+      <!-- CREATE POST -->
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <strong>Create Post</strong>
+          <div class="muted">Logged in as <span id="small-user">User</span></div>
+        </div>
+
+        <div style="margin-top:12px;display:flex;gap:12px">
+          <div class="avatar" id="avatar-small">A</div>
+          <div style="flex:1">
+            <textarea id="post-text" placeholder="Write Description" maxlength="400"></textarea>
+
+            <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
+              <input id="post-image" type="text" placeholder="Image URL (optional)" style="flex:1">
+              <button id="btn-post" class="btn">Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+
+      <!-- CONTROLS -->
+      <div class="controls">
+        <input id="search" class="search" type="text" placeholder="Search posts...">
+        <select id="sort">
+          
+          <option value="latest">Latest First</option>
+          <option value="oldest">Oldest First</option>
+          <option value="mostliked">Most Liked</option>
+        </select>
+
+        <br>
+        <br>
+      
+
+        <button id="clear-storage" class="btn ghost">Clear Posts</button>
+      </div>
+      
+
+      <br>
+      <br>
+
+
+      <!-- FEED -->
+      <div id="feed"></div>
+    </div>
+
+   
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
